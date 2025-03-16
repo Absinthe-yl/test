@@ -1,0 +1,346 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', '微软雅黑', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #003366;
+    padding: 20px 0;
+    text-align: center;
+}
+.out{
+    background: #003366;
+    height: 50px;
+    width: 100%;
+    /* flex用于子元素定位 */
+    display: flex;
+    justify-content: flex-end; /*按钮靠右对齐*/
+}
+
+.out-button {
+    height: 50px;
+    width: 100px;
+    background-color: rgba(128, 128, 128, 0.2); /*背景透明度*/
+    /*三件套*/
+    display: flex; /*flex实现居中*/
+    align-items: center; /*垂直*/
+    justify-content: center; /*水平*/
+}
+
+.out-button-text{
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+.title-group {
+    display: inline-block; /* 内容宽度自适应 */
+}
+
+.logo {
+    height: 150px;
+    width: auto;
+    display: block; /* 让图片独占一行 */
+    margin: 0 auto 10px; /* 图片居中+ 边距*/
+
+    border-radius: 50%;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    font-size: 30px;
+}
+
+.container {
+    background-image: url("../img/backg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 450px;
+    transform: translateY(0);
+    animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+label {
+    display: block;
+    color: #4a5568;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(66, 153, 225, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    background: #fed7d7;
+    color: #c53030;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #feb2b2;
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .login-box {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    input[type="text"],
+    input[type="password"] {
+        padding: 0.8rem;
+    }
+
+    .submit-btn {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+
+/*index.jsp部分 */
+.btn-group {
+    display: flex;
+}
+
+.button {
+    flex: 1;
+    background-color: white;
+    border: 1px solid green;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 继承文字颜色 */
+    position: relative;
+}
+/* 相邻按钮之间的边框处理 */
+.button + .button {
+    border-left: none;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+    color: white; /* 悬停时文字变白 */
+}
+
+
+.notice{
+    text-align: center;
+    width: 100%;
+    border-style: solid;
+}
+
+
+/* person.jsp */
+.person-main {
+    background-image: url('../img/person.png');
+    background-size: cover;       /* 覆盖整个容器 */
+    background-position: center;  /* 图片居中显示 */
+    background-repeat: no-repeat;
+    min-height: 600px;
+    opacity: 0.8;
+    padding: 20px;                /* 内边距*/
+
+}
+.person-main-text {
+    width: 24%;
+    height: 100px;
+    padding: 15px;
+    background-color: yellowgreen;
+    box-shadow: 10px 10px 5px grey;
+    /* 按钮设置 */
+    border: 1px solid green;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+}
+
+/* 对话框 */
+    /* 遮罩层样式 */
+    .dialog-mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 对话框容器 */
+    .dialog-container {
+        background: white;
+        width: 30%;
+        min-width: 300px;
+        border-radius: 4px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        animation: dialog-show 0.3s;
+    }
+
+    /* 对话框内容 */
+    .dialog-header {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        font-size: 18px;
+        color: #333;
+    }
+    .dialog-body {
+        padding: 20px;
+        color: #666;
+    }
+    .dialog-footer {
+        padding: 15px;
+        text-align: right;
+        border-top: 1px solid #eee;
+    }
+    .btn-primary {
+        background: #409eff;
+        color: white;
+        border-color: #409eff;
+    }
+    /* 动画 */
+    @keyframes dialog-show {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    .active {
+        display: flex !important;
+    }
+
+.dialog-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    display: block;
+}
+
+
+/* money.jsp */
+
+
+/* map.jsp */
+.map{
+    padding: 100px;
+    opacity: 0.9;
+}
+.map-text{
+    text-align: center;
+    color: black;
+}
