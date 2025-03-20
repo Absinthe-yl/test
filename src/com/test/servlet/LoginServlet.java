@@ -1,15 +1,19 @@
 package com.test.servlet;
 
-import com.test.dao.StudentDAO;
-import com.test.model.Student;
+import com.test.bean.Person;
+import com.test.dao.PersonDao;
+import com.test.dao.impl.PersonDAaoimpl;
+import com.test.service.PersonService;
+import com.test.service.impl.PersonServiceimpl;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import static com.test.DB.db.getConnection;
 
-import static com.test.util.DBUtil.getConnection;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -30,10 +34,10 @@ public class LoginServlet extends HttpServlet {
         String studentId = request.getParameter("studentId");
         String password = request.getParameter("password");
 
-        StudentDAO dao = new StudentDAO();
-        Student student = dao.findStudent(studentId, password);
-
-        if (student != null) {
+        PersonService svi = new PersonServiceimpl();
+        boolean student=false;
+        student = svi.selectOne(studentId, password);
+        if (student) {
             HttpSession session = request.getSession();
             session.setAttribute("student", student);
             response.sendRedirect("index.jsp");//跳转方法1
