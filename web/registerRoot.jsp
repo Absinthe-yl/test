@@ -30,12 +30,12 @@
         </div>
         <% } %>
 
-        <h2>新生登录</h2>
+        <h2>管理员登录</h2>
         <form action="login" method="post">
             <div class="form-group">
-                <label for="studentId">学号：</label>
+                <label for="studentId">管理员id：</label>
                 <input type="text" id="studentId" name="studentId"
-                       pattern="\d{8}" title="请输入8位学号" required>
+                       pattern="\d{8}" title="请输入8位id" required>
             </div>
 
             <div class="form-group">
@@ -43,10 +43,11 @@
                 <input type="password" id="password" name="password"
                        placeholder="初始密码为身份证后六位" required>
             </div>
+
             <button type="submit" class="submit-btn">立即登录</button>
 
             <div class="admin-login-link">
-                <a href="registerRoot.jsp">管理员身份登录</a>
+                <a href="register.jsp">学生身份登录</a>
             </div>
         </form>
     </div>

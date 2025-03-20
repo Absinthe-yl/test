@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 22353
-  Date: 2025/2/28
-  Time: 10:23
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -18,8 +11,9 @@
 <div class="out">
     <div class="out-button">
         <a href="register.jsp" class="out-button-text">退出登录</a>
-        </div>
+    </div>
 </div>
+
 <header>
     <img src="img/logo.jpg" alt="校徽" class="logo">
     <h1>福建理工大学一站式迎新系统</h1>
@@ -36,27 +30,17 @@
 <div class="person-main">
     <!-- 四个功能按钮 -->
     <div class="btn-container">
-        <button class="person-main-text" id="openDialogBtn">查看班级信息</button>
-        <button class="person-main-text" id="viewCalendarBtn">查看校历图片</button>
-        <button class="person-main-text" id="viewDormBtn">查看宿舍信息</button>
-        <button class="person-main-text" id="viewCounselorBtn">查看辅导员信息</button>
-    </div>
+        <%-- 修改后的宿舍信息按钮 --%>
+        <form action="person" method="post">
+            <input type="hidden" name="action" value="queryDorm">
+            <button type="submit" class="person-main-text">宿舍信息</button>
+        </form>
 
-    <!-- 通用对话框 -->
-    <div class="dialog-mask" id="dialogMask">
-        <div class="dialog-container">
-            <div class="dialog-header" id="dialogTitle">标题</div>
-            <div class="dialog-body" id="dialogContent">
-                <!-- 内容 -->
-            </div>
-            <div class="dialog-footer">
-                <button class="btn" id="cancelBtn">关 闭</button>
-            </div>
-        </div>
+        <%-- 其他保持原样 --%>
+        <a href="data.jsp"><button class="person-main-text">班级信息</button></a>
+        <a href="data.jsp"><button class="person-main-text">查看校历</button></a>
+        <a href="data.jsp"><button class="person-main-text">查看辅导员信息</button></a>
     </div>
 </div>
-
-
-<script src="js/validation.js"></script>
 </body>
 </html>

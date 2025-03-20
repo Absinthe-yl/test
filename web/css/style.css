@@ -344,3 +344,61 @@ input[type="password"] {
     text-align: center;
     color: black;
 }
+
+/* registerroot */
+.admin-login-link {
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.admin-login-link a {
+    color: #2c6db1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.admin-login-link a:hover {
+    color: #1a4d7e;
+    text-decoration: underline;
+}
+/* data */
+.data_container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.data_dorm-card {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.data_info-item {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.data_error-message {
+    color: #dc3545;
+    padding: 15px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.data_title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}

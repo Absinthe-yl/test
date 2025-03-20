@@ -1,11 +1,7 @@
 package com.test.servlet;
 
-import com.test.bean.Person;
-import com.test.dao.PersonDao;
-import com.test.dao.impl.PersonDAaoimpl;
 import com.test.service.PersonService;
 import com.test.service.impl.PersonServiceimpl;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -38,8 +34,8 @@ public class LoginServlet extends HttpServlet {
         boolean student=false;
         student = svi.selectOne(studentId, password);
         if (student) {
-            HttpSession session = request.getSession();
-            session.setAttribute("student", student);
+            // 存储学号到Session 为了查询
+            request.getSession().setAttribute("loggedInStudentId", studentId);
             response.sendRedirect("index.jsp");//跳转方法1
         } else {
             request.setAttribute("error", "学号或密码错误！请重新输入或者联系辅导员");

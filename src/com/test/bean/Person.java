@@ -10,7 +10,6 @@ public class Person {
     public Person(String studentId, String password) {
         this.id = Integer.parseInt(studentId);
         this.name = studentId;
-
     }
     public int getId() {
         return id;
