@@ -37,7 +37,6 @@
                 <input type="text" id="studentId" name="studentId"
                        pattern="\d{8}" title="请输入8位学号" required>
             </div>
-
             <div class="form-group">
                 <label for="password">密码：</label>
                 <input type="password" id="password" name="password"

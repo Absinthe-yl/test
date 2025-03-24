@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 22353
+  Date: 2025/3/21
+  Time: 下午4:07
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -16,29 +23,24 @@
 
 <header>
     <img src="img/logo.jpg" alt="校徽" class="logo">
-    <h1>福建理工大学一站式迎新系统</h1>
+    <h1>福建理工大学一站式迎新系统-管理员</h1>
 </header>
 
 <div class="btn-group">
-    <a href="index.jsp" class="button">回到主页</a>
-    <a href="money.jsp" class="button">缴费系统</a>
-    <a href="school.jsp" class="button">我的大学</a>
-    <a href="person.jsp" class="button">个人资料查询</a>
+    <a href="indexRoot.jsp" class="button">主页</a>
+    <a href="moneyRoot.jsp" class="button">缴费信息</a>
+    <a href="personRoot.jsp" class="button">新生资料</a>
     <a href="https://www.fjut.edu.cn" target="_blank" class="button">学校官网</a>
 </div>
 
 <div class="person-main">
     <div class="btn-container">
         <%-- 宿舍信息按钮 --%>
-        <form action="person" method="post">
+        <form action="dataRoot" method="post">
             <input type="hidden" name="action" value="queryDorm">
-            <button type="submit" class="person-main-text">宿舍信息</button>
+            <button type="submit" class="person-main-text">学生信息</button>
         </form>
-        <form action="wClass" method="post">
-            <input type="hidden" name="action" value="queryDorm">
-            <button type="submit" class="person-main-text">班级信息</button>
-        </form>
-        <form action="xiao" method="post">
+        <form action="xiaoR" method="post">
             <input type="hidden" name="action" value="queryDorm">
             <button type="submit" class="person-main-text">查看校历</button>
         </form>

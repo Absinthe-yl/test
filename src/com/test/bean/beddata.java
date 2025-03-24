@@ -1,10 +1,11 @@
 package com.test.bean;
 
-public class beddata {
-    private String id;
-    private String building;
-    private String  room;
-    private String bed;
+public class beddata{
+    private String studentId;  // CHAR(12)
+    private String building;   // VARCHAR(20)
+    private String room;       // VARCHAR(10)
+    private String bed;        // VARCHAR(10)
+    private String name;
 
     public String getBed() {
         return bed;
@@ -39,11 +40,19 @@ public class beddata {
                 '}';
     }
 
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 }

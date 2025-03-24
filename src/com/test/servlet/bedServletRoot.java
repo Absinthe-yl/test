@@ -13,30 +13,24 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-@WebServlet("/person")
-public class bedServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+@WebServlet("/dataRoot")
+public class bedServletRoot extends HttpServlet {
+    protected  void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 调用 doPost 方法，复用查询逻辑
+        doPost(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //关键点:从Session中获取登录时存储的学号 loggedInStudentId
-        String studentId = (String) request.getSession().getAttribute("loggedInStudentId");
-        if (studentId == null) {
-            response.sendRedirect("register.jsp");  //如果未获取到学号（用户未登录），重定向到注册页register.jsp
-            return;
-        }
-
         try {
             PersonService service = new PersonServiceimpl();
-            List<beddata> dorms = service.data(studentId);
+            List<beddata> dorms = service.queryAll();
             if(dorms == null || dorms.isEmpty()) {
                 System.out.println("dorms is empty");
                 request.setAttribute("error", "未找到宿舍信息");
             } else {
                 System.out.println(dorms);
                 // 将数据存入会话
-                request.getSession().setAttribute("dormList", dorms);
-                request.getRequestDispatcher("data.jsp").forward(request, response);
+                request.setAttribute("dormListBed", dorms);
+                request.getRequestDispatcher("dataRoot.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             request.setAttribute("error", "系统错误：" + e.getMessage());

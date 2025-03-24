@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.test.bean.beddata" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.test.bean.Class" %>
 <%
     // 从会话作用域获取数据
-    List<beddata> dormList = (List<beddata>) session.getAttribute("dormList");
+    List<Class> dormList = (List<Class>) session.getAttribute("dormList1");
     String error = (String) request.getAttribute("error");
 %>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宿舍信息详情</title>
+    <title>班级信息详情</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
 </div>
 
 <div class="data_container">
-    <h1 class="data_title">我的宿舍信息</h1>
+    <h1 class="data_title">我的班级信息</h1>
 
     <%-- 错误提示 --%>
     <% if(error != null) { %>
@@ -45,22 +45,22 @@
 
     <%-- 宿舍信息展示 --%>
     <% if(dormList != null && !dormList.isEmpty()) {
-        for(beddata dorm : dormList) { %>
+        for(Class dorm : dormList) { %>
     <div class="data_dorm-card">
         <div class="data_info-item">
-            <strong>宿舍楼：</strong><%= dorm.getBuilding() %>
+            <strong>学院：</strong><%= dorm.getXueyuan() %>
         </div>
         <div class="data_info-item">
-            <strong>房间号：</strong><%= dorm.getRoom() %>
+            <strong>班级：</strong><%= dorm.getBanji() %>
         </div>
         <div class="data_info-item">
-            <strong>床号：</strong><%= dorm.getBed() %>
+            <strong>辅导员：</strong><%= dorm.getFudaoyuan() %>
         </div>
     </div>
     <% }
     } else { %>
     <div class="data_dorm-card">
-        当前暂无宿舍分配信息
+        当前暂无班级分配信息
     </div>
     <% } %>
 </div>

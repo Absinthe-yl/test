@@ -402,3 +402,12 @@ input[type="password"] {
     color: #2c3e50;
     margin-bottom: 25px;
 }
+/*校历*/
+/* 内容容器 */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

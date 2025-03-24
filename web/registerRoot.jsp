@@ -31,11 +31,11 @@
         <% } %>
 
         <h2>管理员登录</h2>
-        <form action="login" method="post">
+        <form action="loginroot" method="post">
             <div class="form-group">
-                <label for="studentId">管理员id：</label>
-                <input type="text" id="studentId" name="studentId"
-                       pattern="\d{8}" title="请输入8位id" required>
+                <label for="Id">管理员id：</label>
+                <input type="text" id="Id" name="Id"
+                       pattern="\d{3}" title="请输入3位id" required>
             </div>
 
             <div class="form-group">
